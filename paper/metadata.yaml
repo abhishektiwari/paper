@@ -1,0 +1,38 @@
+# Add Article details
+# https://pandoc.org/jats.html#required-metadata
+title: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
+abstract: |
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam 
+ pharetra metus ut nisi porta suscipit. Morbi at orci quis justo 
+ posuere convallis. Curabitur dapibus mollis pharetra. Curabitur 
+ eleifend vel leo vel condimentum. Phasellus elementum viverra eros. 
+ Vestibulum rhoncus nisl ipsum, nec pulvinar tellus luctus at. Etiam 
+ ullamcorper nec justo molestie mattis. Phasellus dapibus erat ut nisl 
+ dapibus, ut scelerisque dui tempus.
+tags:
+  - tag1
+  - tag2
+# Name of Authors
+author:
+  - name: "First Last"
+    orcid: "000-1111-2222-3333"
+    surname: "Last"
+    given-names: "First"
+    email: "me@example.com"
+    affiliation: "1, 2"
+affiliation:
+ - organization: Example Corp
+   id: 1
+ - organization: The University of Z
+   id: 2
+journal:
+  title: "Security & Privacy"
+  publisher: "D3 Metalab"
+date: DD Month YYYY
+titlepage: true
+titlepage-color: "3C9F53"
+titlepage-text-color: "FFFFFF"
+titlepage-rule-color: "FFFFFF"
+subtitle: "Journal of Security & Privacy"
+colorlinks: true
+listings-disable-line-numbers: true
