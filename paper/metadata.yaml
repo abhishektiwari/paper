@@ -36,3 +36,8 @@ titlepage-rule-color: "FFFFFF"
 subtitle: "Journal of Security & Privacy"
 colorlinks: true
 listings-disable-line-numbers: true
+fontfamily: lmodern
+link-citations: true
+# Download style from https://github.com/citation-style-language/styles
+# Add to csl folder
+csl: "../csl/ieee.csl"
