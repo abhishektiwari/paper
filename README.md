@@ -4,9 +4,10 @@ Create a new repository using this template.
 ## Steps
 
 - Update paper metadata `metadata.yaml`
-- Update paper content `paper.md`
+- Update paper content `article.md`
 - Update the citation `article.bibtex`
-- Add images to `images` folder and refrence in `paper.md`
+- Add images to `images` folder and refrence in `article.md`
+- Run the build `bash build.sh` to generate `article.pdf`
 
 
 # Prerequisite
