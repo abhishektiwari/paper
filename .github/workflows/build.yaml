@@ -32,7 +32,7 @@ jobs:
 
       - name: Run pandoc and texlive install if paper file(s) change
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        run: apt-get update && apt-get install pandoc texlive -y
+        run: sudo apt-get update && sudo apt-get install pandoc texlive -y
 
       - name: Run pandoc and texlive install if paper file(s) change
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
