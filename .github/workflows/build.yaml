@@ -32,13 +32,5 @@ jobs:
 
       - name: Run pandoc and texlive install if paper file(s) change
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        run: sudo apt-get update && sudo apt-get install pandoc texlive -y
-
-      - name: Init tlmgr
-        # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        run: tlmgr init-usertree && sudo tlmgr update --all
-
-      - name: Update tlmgr
-        # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        run: sudo tlmgr update --all
+        run: sudo apt-get update && sudo apt-get install pandoc texlive-full -y
       
