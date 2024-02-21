@@ -30,9 +30,13 @@ jobs:
           echo "One or more files in the paper folder has changed."
           echo "List all the files that have changed: $ALL_CHANGED_FILES"
 
-      - name: Run pandoc and texlive install if paper file(s) change
+      - name: Install pandoc if paper file(s) change
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        run: sudo apt-get update && sudo apt-get install pandoc pandoc-citeproc texlive-full -y
+        run: sudo apt-get update && curl -sLO https://github.com/jgm/pandoc/releases/download/3.1.12.1/pandoc-3.1.12.1-1-amd64.deb && sudo dpkg -i puppetlabs-release-precise.deb && pandoc -v
+
+      - name: Install texlive if paper file(s) change
+        # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
+        run: sudo apt-get install texlive-full -y
 
       - name: Run paper pdf build if paper file(s) change
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'

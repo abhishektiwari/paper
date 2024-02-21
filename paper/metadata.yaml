@@ -26,14 +26,14 @@ affiliation:
  - organization: The University of Z
    id: 2
 journal:
-  title: "Security & Privacy"
-  publisher: "D3 Metalab"
+  title: "Publication Name"
+  publisher: "Publisher Name"
 date: DD Month YYYY
 titlepage: true
 titlepage-color: "3C9F53"
 titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "FFFFFF"
-subtitle: "Journal of Security & Privacy"
+subtitle: "Publication Name"
 colorlinks: true
 listings-disable-line-numbers: true
 fontfamily: lmodern

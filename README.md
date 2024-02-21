@@ -11,7 +11,7 @@ Create a new repository using this template.
 
 
 # Prerequisite
-Install `texlive`, `pandoc`,
+On Mac Install `texlive`, `pandoc` using `brew`,
 
 ```
 brew install pandoc texlive
