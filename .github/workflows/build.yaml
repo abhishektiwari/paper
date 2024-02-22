@@ -50,6 +50,6 @@ jobs:
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
         uses: svenstaro/upload-release-action@v2
         with:
-          file: article.pdf
+          file: /home/runner/work/paper/paper/paper/article.pdf
           overwrite: true
           body: "Updated article.pdf"
