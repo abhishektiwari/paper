@@ -44,7 +44,7 @@ jobs:
 
       - name: Run paper pdf build if paper file(s) change
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        run: cd paper && pandoc --bibliography article.bibtex --citeproc article.md -o article.pdf --from markdown --metadata-file=metadata.yaml --data-dir=../data --template eisvogel.tex --listings --pdf-engine=pdflatex && pwd && ls -la
+        run: cd paper && pandoc --bibliography article.bibtex --citeproc article.md -o article.pdf --from markdown --metadata-file=metadata.yaml --data-dir=../data --template eisvogel.tex --listings && pwd && ls -la
 
       - name: Upload article pdf if paper file(s) change
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
