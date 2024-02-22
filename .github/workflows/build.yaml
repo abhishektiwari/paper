@@ -27,7 +27,7 @@ jobs:
       - name: Run step if paper file(s) change
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
         env:
-          ALL_CHANGED_FILES: ${{ steps.changed-files-specific.outputs.paper_all_changed_files }}
+          ALL_CHANGED_FILES: ${{ steps.changed-files-yaml.outputs.paper_all_changed_files }}
         run: |
           echo "One or more files in the paper folder has changed."
           echo "List all the files that have changed: $ALL_CHANGED_FILES"

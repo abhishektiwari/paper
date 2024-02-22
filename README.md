@@ -16,7 +16,7 @@ Template repository to write academic research paper using markdown and generate
 ## Steps for Action build
 
 - Commit your paper changes and push.
-- If you have changed the following folders Github Action will perform `article.pdf` build.
+- If you have changed the following folders Github Action will perform `article.pdf` build. Due to large size of `texlive-full`, currently build takes anywhere between 6-8 minutes.
     - `paper/**`
     - `paper/images/**`
     - `csl/**`
