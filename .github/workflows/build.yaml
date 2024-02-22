@@ -19,8 +19,10 @@ jobs:
         with:
           files_yaml: |
            paper:
-              - paper/**.md
+              - paper/**
               - paper/images/**
+              - csl/**
+              - data/templates/**
 
       - name: Run step if paper file(s) change
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
@@ -31,19 +33,19 @@ jobs:
           echo "List all the files that have changed: $ALL_CHANGED_FILES"
 
       - name: Install pandoc if paper file(s) change
-        # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
+        if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
         run: sudo apt-get update && curl -sLO https://github.com/jgm/pandoc/releases/download/3.1.12.1/pandoc-3.1.12.1-1-amd64.deb && sudo dpkg -i pandoc-3.1.12.1-1-amd64.deb && pandoc -v
 
       - name: Install texlive if paper file(s) change
-        # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
+        if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
         run: sudo apt-get install texlive-full -y
 
       - name: Run paper pdf build if paper file(s) change
-        # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
+        if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
         run: cd paper && pandoc --bibliography article.bibtex --citeproc article.md -o article.pdf --from markdown --metadata-file=metadata.yaml --data-dir=../data --template eisvogel.tex --listings && pwd && ls -la
 
       - name: Upload article pdf if paper file(s) change
-        # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
+        if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
         uses: svenstaro/upload-release-action@v2
         with:
           file: /home/runner/work/paper/paper/paper/article.pdf

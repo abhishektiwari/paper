@@ -1,7 +1,9 @@
 # Paper Template
-Create a new Github repository using this template.
+Template repository to write academic research paper using markdown and generate PDF using Pandoc.
 
-After creating repository, enable `Workflow permissions` to `Read and write permissions` for your Github repository by going to `Settings` → `Actions` → `General`. 
+1. Create a new Github repository using this template.
+
+2. After creating repository, enable `Workflow permissions` to `Read and write permissions` for your Github repository by going to `Settings` → `Actions` → `General`. 
 
 ## Steps for local build
 
@@ -14,6 +16,11 @@ After creating repository, enable `Workflow permissions` to `Read and write perm
 ## Steps for Action build
 
 - Commit your paper changes and push.
+- If you have changed the following folders Github Action will perform `article.pdf` build.
+    - `paper/**`
+    - `paper/images/**`
+    - `csl/**`
+    - `data/templates/**`
 - On successful build `article.pdf` will be uploaded to `Releases` section of your Github repository. 
 
 
@@ -24,7 +31,13 @@ On Mac Install `texlive`, `pandoc` using `brew`,
 brew install pandoc texlive
 ```
 
-Install required Texlive packages,
+Install only required `texlive` packages,
 ```
 sudo tlmgr install beamerarticle pgfpages amsmath amssymb setspace inputenc mathspec unicode-math lmodern xeCJK upquote parskip fancyvrb xcolor hang flushmargin bottom multiple adjustbox graphicx listings etoolbox fvextra multirow longtable booktabs array caption headsepline footsepline titling footnotebackref sourcesanspro mdframed csquotes pagecolor afterpage tikz hyperref bookmark biblatex selnolig natbib babel calc subcaption soul luacolor svg float ccicons
+```
+
+Alternatively, install `texlive-full`,
+
+```
+brew install pandoc texlive-full
 ```
