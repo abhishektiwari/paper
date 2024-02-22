@@ -36,11 +36,15 @@ jobs:
 
       - name: Install texlive if paper file(s) change
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        run: sudo apt-get install texlive-full -y
+        # run: sudo apt-get install texlive-full -y
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: texlive-full
+          version: 1.0
 
       - name: Run paper pdf build if paper file(s) change
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        run: cd paper && pandoc --bibliography article.bibtex --citeproc article.md -o article.pdf --from markdown --metadata-file=metadata.yaml --data-dir=../data --template eisvogel.tex --listings --pdf-engine=pdflatex
+        run: cd paper && pandoc --bibliography article.bibtex --citeproc article.md -o article.pdf --from markdown --metadata-file=metadata.yaml --data-dir=../data --template eisvogel.tex --listings --pdf-engine=pdflatex && pwd && ls -la
 
       - name: Upload article pdf if paper file(s) change
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
