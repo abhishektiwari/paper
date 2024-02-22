@@ -1,13 +1,20 @@
 # Paper Template
-Create a new repository using this template.
+Create a new Github repository using this template.
 
-## Steps
+After creating repository, enable `Workflow permissions` to `Read and write permissions` for your Github repository by going to `Settings` → `Actions` → `General`. 
+
+## Steps for local build
 
 - Update paper metadata `metadata.yaml`
 - Update paper content `article.md`
 - Update the citation `article.bibtex`
 - Add images to `images` folder and refrence in `article.md`
 - Run the build `bash build.sh` to generate `article.pdf`
+
+## Steps for Action build
+
+- Commit your paper changes and push.
+- On successful build `article.pdf` will be uploaded to `Releases` section of your Github repository. 
 
 
 # Prerequisite

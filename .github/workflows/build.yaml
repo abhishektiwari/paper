@@ -36,12 +36,7 @@ jobs:
 
       - name: Install texlive if paper file(s) change
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        # run: sudo apt-get install texlive-full -y
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: texlive-full
-          version: 1.0
-          execute_install_scripts: true
+        run: sudo apt-get install texlive-full -y
 
       - name: Run paper pdf build if paper file(s) change
         # if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
