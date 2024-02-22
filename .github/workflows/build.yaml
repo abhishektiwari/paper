@@ -30,6 +30,9 @@ jobs:
           calculatedSha=$(git rev-parse --short ${{ github.sha }})
           echo "COMMIT_SHORT_SHA=$calculatedSha" >> $GITHUB_ENV
 
+      - name: Set env for time now
+        run: echo "NOW=v$(date +'%Y%m%d.%H%M%S')" >> $GITHUB_ENV
+
       - name: Run step if paper file(s) change
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
         env:
@@ -56,6 +59,6 @@ jobs:
         with:
           file: /home/runner/work/paper/paper/paper/article.pdf
           overwrite: true
-          tag: ${{ env.COMMIT_SHORT_SHA }}
+          tag: ${{ env.NOW }}
           target_commit: ${{ env.COMMIT_SHORT_SHA }}
           body: ${{ github.event.head_commit.message }}
