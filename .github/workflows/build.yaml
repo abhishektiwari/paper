@@ -31,7 +31,7 @@ jobs:
           echo "COMMIT_SHORT_SHA=$calculatedSha" >> $GITHUB_ENV
 
       - name: Set env for time now
-        run: echo "NOW=v$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+        run: echo "NOW=v$(date +'%Y%m%d%')" >> $GITHUB_ENV
 
       - name: Run step if paper file(s) change
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
