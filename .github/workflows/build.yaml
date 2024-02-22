@@ -28,7 +28,7 @@ jobs:
         id: vars
         run: |
           calculatedSha=$(git rev-parse --short ${{ github.sha }})
-          echo "COMMIT_SHORT_SHA=$calculatedSha" >> $GITHUB_ENV
+          echo "COMMIT_SHORT_SHA=v$calculatedSha" >> $GITHUB_ENV
 
       - name: Set env for time now
         run: echo "NOW=v$(date +'%Y%m%d')" >> $GITHUB_ENV
@@ -60,5 +60,4 @@ jobs:
           file: /home/runner/work/paper/paper/paper/article.pdf
           overwrite: true
           tag: ${{ env.NOW }}
-          target_commit: ${{ env.COMMIT_SHORT_SHA }}
           body: ${{ github.event.head_commit.message }}
