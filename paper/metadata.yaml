@@ -26,7 +26,7 @@ affiliation:
  - organization: The University of Z
    id: 2
 journal:
-  title: Publication Name
+  title: Journal of Xyz
 # ISO 8601 standard format i.e. YYYY-MM-DD 
 date: 2019-09-07
 titlepage: true

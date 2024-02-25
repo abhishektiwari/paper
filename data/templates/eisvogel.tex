@@ -930,7 +930,7 @@ $endif$
 }
 
 \providecommand{\copyt} {
-  \normalsize{Authors of papers retain copyright and release the work under a \href{$cc-license-url$}{$cc-license$}.}
+  \normalsize{© \DTMfetchyear{publishdate} $for(author)$$author.name$$sep$$endfor$. Work is  distributed  under \href{$cc-license-url$}{$cc-license$}.}
 }
 %%
 %% begin titlepage
@@ -998,7 +998,7 @@ $if(titlepage-background)$
     }
     $if(journal.title)$
     \vskip 0.2em
-    {\normalsize \textsc{$journal.title$}}
+    {\Large \textit{\textbf{$journal.title$}}}
     $endif$
   \vskip 0.1em
   \normalsize Published: \pdate \linebreak
@@ -1044,7 +1044,7 @@ $else$
     }
     $if(journal.title)$
     \vskip 1em
-    {\normalsize \textsc{$journal.title$}}
+    {\Large \textit{\textbf{$journal.title$}}}
     $endif$
   \vskip 0.2em
   \normalsize Published: \pdate \linebreak
