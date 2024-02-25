@@ -12,32 +12,37 @@ abstract: |
 tags:
   - tag1
   - tag2
-# Name of Authors
+# Name of Authors in order
 author:
-  - name: "First Last"
-    orcid: "000-1111-2222-3333"
-    surname: "Last"
-    given-names: "First"
-    email: "me@example.com"
-    affiliation: "1, 2"
+  - name: First Last
+    orcid: 000-1111-2222-3333
+    surname: Last
+    given-names: First
+    email: me@example.com
+    affiliation: 1, 2
 affiliation:
  - organization: Example Corp
    id: 1
  - organization: The University of Z
    id: 2
 journal:
-  title: "Publication Name"
-  publisher: "Publisher Name"
-date: DD Month YYYY
+  title: Publication Name
+# ISO 8601 standard format i.e. YYYY-MM-DD 
+date: 2019-09-07
 titlepage: true
-titlepage-color: "3C9F53"
-titlepage-text-color: "FFFFFF"
-titlepage-rule-color: "FFFFFF"
-subtitle: "Publication Name"
+titlepage-color: FFFFFF
+titlepage-text-color: "000000"
+titlepage-rule-color: "000000"
+subtitle: Publication Name
 colorlinks: true
 listings-disable-line-numbers: true
 fontfamily: lmodern
 link-citations: true
+numbersections: true
 # Download style from https://github.com/citation-style-language/styles
 # Add to csl folder
-csl: "../csl/ieee.csl"
+csl: ../csl/ieee.csl
+# Add doi for published paper or archive
+doi: 10.xxxxxx/draft
+cc-license: "CC BY 4.0"
+cc-license-url: "https://creativecommons.org/licenses/by/4.0/"

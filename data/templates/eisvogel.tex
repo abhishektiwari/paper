@@ -863,6 +863,9 @@ $endif$
 }
 $endif$
 
+\usepackage[calc]{datetime2}
+\DTMsavedate{publishdate}{$date$}
+
 %
 % header and footer
 %
@@ -876,10 +879,10 @@ $else$
   \clearpairofpagestyles
   \ihead*{$if(header-left)$$header-left$$else$\footnotesize{$title$}$endif$}
   \chead*{$if(header-center)$$header-center$$else$$endif$}
-  \ohead*{$if(header-right)$$header-right$$else$\footnotesize{$date$}$endif$}
-  \ifoot*{$if(footer-left)$$footer-left$$else$\footnotesize{Copyright © $for(author)$$author.name$$sep$$endfor$}$endif$}
+  \ohead*{$if(header-right)$$header-right$$else$\footnotesize{\pdate}$endif$}
+  \ifoot*{$if(footer-left)$$footer-left$$else$\footnotesize{\doi}$endif$}
   \cfoot*{$if(footer-center)$$footer-center$$else$\footnotesize\thepage$endif$}
-  \ofoot*{$if(footer-right)$$footer-right$$else$\footnotesize{$journal.title$, $journal.publisher$}$endif$}
+  \ofoot*{$if(footer-right)$$footer-right$$else$\footnotesize{$journal.title$}$endif$}
   \addtokomafont{pageheadfoot}{\upshape}
 }
 \pagestyle{eisvogel-header-footer}
@@ -907,12 +910,28 @@ $endif$
 %% end added
 %%
 
-\usepackage{ccicons}
-
 \begin{document}
 
-\renewcommand{\abstractname}{Abstract}
+\renewcommand{\abstractname}{Abstract:}
+\providecommand{\tagsname}[1]
+{
+  \textbf{\textit{Keywords:}} #1
+}
 
+\providecommand{\pdate}
+{
+  \DTMMonthname{\DTMfetchmonth{publishdate}} \DTMfetchday{publishdate}, \DTMfetchyear{publishdate}
+}
+
+\providecommand{\doi} {
+  $if(doi)$
+  \href{https://doi.org/$doi$}{https://doi.org/$doi$}
+  $endif$
+}
+
+\providecommand{\copyt} {
+  \normalsize{Authors of papers retain copyright and release the work under a \href{$cc-license-url$}{$cc-license$}.}
+}
 %%
 %% begin titlepage
 %%
@@ -950,7 +969,7 @@ $if(titlepage-background)$
   \noindent {\huge \textbf{\textsf{$title$}}}
   \vskip 0.2em
   \noindent {
-    \Large
+    \normalsize
     \textsc{
     $for(author)$
         ${it.name}%
@@ -968,7 +987,7 @@ $if(titlepage-background)$
     }
     \vskip 0.1em
     \noindent {
-      \Large
+      \normalsize
       \textsf{
       $for(affiliation)$
           \textsuperscript{${it.id}}%
@@ -979,12 +998,13 @@ $if(titlepage-background)$
     }
     $if(journal.title)$
     \vskip 0.2em
-    {\Large \textsc{$journal.title$, $journal.publisher$}}
+    {\normalsize \textsc{$journal.title$}}
     $endif$
   \vskip 0.1em
-  \textsf{$date$} \linebreak
-  \ccby \linebreak
-  \tiny{Last updated: \today}
+  \normalsize Published: \pdate \linebreak
+  \normalsize{DOI: \doi} \linebreak
+  \copyt \linebreak
+  \scriptsize{Last updated: \today}
   }
   \vfill
 }
@@ -995,7 +1015,7 @@ $else$
   \noindent {\huge \textbf{\textsf{$title$}}}
   \vskip 2em
   \noindent {
-    \Large
+    \normalsize
     \textsf{
     $for(author)$
         ${it.name}%
@@ -1013,7 +1033,7 @@ $else$
     }
     \vskip 0.1em
     \noindent {
-      \Large
+      \normalsize
       \textsf{
       $for(affiliation)$
           \textsuperscript{${it.id}}%
@@ -1024,17 +1044,16 @@ $else$
     }
     $if(journal.title)$
     \vskip 1em
-    {\Large \textsc{$journal.title$, $journal.publisher$}}
+    {\normalsize \textsc{$journal.title$}}
     $endif$
   \vskip 0.2em
-  \textsf{$date$} \linebreak
-  \ccby \linebreak
-  \tiny{Last updated: \today}
+  \normalsize Published: \pdate \linebreak
+  \normalsize{DOI: \doi} \linebreak
+  \copyt \linebreak
+  \scriptsize{Last updated: \today}
   }
   \vfill
 }
-
-\author{$for(author)$$author.name$$sep$, $endfor$}
 $endif$
 
 $if(titlepage-logo)$
@@ -1055,7 +1074,6 @@ $endif$
 %%
 %% end titlepage
 %%
-
 $if(has-frontmatter)$
 \frontmatter
 $endif$
@@ -1064,12 +1082,49 @@ $if(beamer)$
 \frame{\titlepage}
 % don't generate the default title
 $else$
-\maketitle
+\vfill
+\noindent {\huge \textbf{\textsf{$title$}}}
+\vskip 2em
+\noindent {
+  \normalsize
+  \textsf{
+  $for(author)$
+      ${it.name}%
+      $if(it.orcid)$
+      \,\orcidlink{${it.orcid}}\,%
+      $endif$
+      $if(it.affiliation)$
+      \textsuperscript{${it.affiliation}}%
+      $endif$
+      $if(it.email)$
+      \,\textsuperscript{\href{mailto:${it.email}}{\faIcon{envelope}}}\,%
+      $endif$
+      $sep$, \, %
+  $endfor$
+  }
+  \vskip 0.1em
+  \noindent {
+    \normalsize
+    \textsf{
+    $for(affiliation)$
+        \textsuperscript{${it.id}}%
+        ${it.organization}%
+        $sep$, \, %
+    $endfor$
+    }
+  }
+  \vskip 2em
 $endif$
 $if(abstract)$
 \begin{abstract}
+\textbf{\abstractname}
 $abstract$
+\vskip 1em
+$if(tags)$
+\textbf{\tagsname} {$for(tags)$$tags$$sep$, $endfor$}
+$endif$
 \end{abstract}
+
 $endif$
 $endif$
 
