@@ -10,6 +10,19 @@ Suspendisse congue ante in velit finibus laoreet. Pellentesque non mattis ipsum.
 
 In lobortis consequat nibh, nec fringilla diam varius nec. In consectetur erat eu mi porttitor, eu consectetur velit tincidunt. Mauris ac vehicula lorem, vitae dapibus lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer sit amet massa quis diam consectetur rhoncus. Praesent pulvinar, justo quis commodo aliquet, metus purus lobortis ante, ac auctor ante enim ac turpis. Vivamus ut finibus lorem. Ut eget purus rutrum, ullamcorper ante eget, congue massa. Nullam sed justo vitae urna sollicitudin facilisis.
 
++---------------------+-----------------------+
+| Location            | Temperature 1961-1990 |
+|                     | in degree Celsius     |
+|                     +-------+-------+-------+
+|                     | min   | mean  | max   |
++=====================+=======+=======+=======+
+| Antarctica          | -89.2 | N/A   | 19.8  |
++---------------------+-------+-------+-------+
+| Earth               | -89.2 | 14    | 56.7  |
++---------------------+-------+-------+-------+
+
+Table:  Demonstration of simple table syntax.
+
 # Mauris quis lacus
 
 Fusce ultricies ante sit amet dui egestas, vitae posuere libero facilisis [@tiwari2007workflow]. Aliquam tincidunt, odio et mattis finibus, leo ante vehicula ligula, ac accumsan nunc diam ut mi. Donec ullamcorper tempus auctor. Nunc varius aliquet lectus, id consectetur diam vulputate a. Maecenas suscipit lacus sed lorem fermentum venenatis. Integer eleifend non justo egestas egestas. Ut ut vehicula metus. Proin pulvinar bibendum finibus. Etiam ac vulputate lacus, ac sagittis magna. Etiam pharetra tempus magna, a mollis neque scelerisque nec. Mauris id tortor sollicitudin diam scelerisque suscipit. Ut tincidunt purus sed est aliquam, ut sodales libero ultricies. Etiam sodales tortor quis blandit elementum. Vestibulum tincidunt placerat arcu vel congue. Sed sodales iaculis arcu accumsan euismod.
