@@ -86,7 +86,7 @@ graph G {
 
 Suspendisse aliquet nisi lacinia fermentum pretium. Donec et condimentum ipsum, quis gravida ligula. Aliquam placerat massa eu ipsum viverra tincidunt. Maecenas pretium mauris quis tempor euismod. Maecenas imperdiet lorem sit amet varius consectetur. Nullam bibendum diam nec placerat sodales. Aenean molestie facilisis pharetra.
 
-```{.graphviz #whatever2 caption="this is graph using dot engine" layout="dot" directed=True}
+```{.graphviz #whatever2 caption="this is graph using dot engine 2" layout="dot" directed=True}
 digraph finite_state_machine {
 	fontname="Helvetica,Arial,sans-serif"
 	node [fontname="Helvetica,Arial,sans-serif"]
