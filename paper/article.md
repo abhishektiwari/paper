@@ -27,9 +27,89 @@ Table:  Demonstration of simple table syntax.
 
 Fusce ultricies ante sit amet dui egestas, vitae posuere libero facilisis [@tiwari2007workflow]. Aliquam tincidunt, odio et mattis finibus, leo ante vehicula ligula, ac accumsan nunc diam ut mi. Donec ullamcorper tempus auctor. Nunc varius aliquet lectus, id consectetur diam vulputate a. Maecenas suscipit lacus sed lorem fermentum venenatis. Integer eleifend non justo egestas egestas. Ut ut vehicula metus. Proin pulvinar bibendum finibus. Etiam ac vulputate lacus, ac sagittis magna. Etiam pharetra tempus magna, a mollis neque scelerisque nec. Mauris id tortor sollicitudin diam scelerisque suscipit. Ut tincidunt purus sed est aliquam, ut sodales libero ultricies. Etiam sodales tortor quis blandit elementum. Vestibulum tincidunt placerat arcu vel congue. Sed sodales iaculis arcu accumsan euismod.
 
+
+## Algorithm 1
+Just a sample algorithmn
+\begin{algorithm}[H]
+\DontPrintSemicolon
+\SetAlgoLined
+\KwResult{Write here the result}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
+\Input{Write here the input}
+\Output{Write here the output}
+\BlankLine
+\While{While condition}{
+    instructions\;
+    \eIf{condition}{
+        instructions1\;
+        instructions2\;
+    }{
+        instructions3\;
+    }
+}
+\caption{While loop with If/Else condition}
+\end{algorithm} 
+
 Maecenas cursus, turpis non ultrices tristique, nisi nibh venenatis felis, vitae condimentum lacus dolor non ligula. Aliquam vel imperdiet ligula. Quisque eget luctus sem. Morbi ultrices elit mi. Suspendisse ante diam, vulputate a consectetur id, viverra vitae lacus. Duis mattis turpis eget magna sollicitudin, a hendrerit tortor sagittis. Proin scelerisque sollicitudin ex, vitae convallis tellus suscipit quis. Aenean dictum pellentesque libero, ut pharetra est pulvinar a. Nam sit amet nisi dignissim, molestie ligula a, laoreet erat. Nulla sit amet placerat turpis, condimentum pellentesque magna. Fusce sodales sollicitudin lorem, sed sollicitudin nulla vulputate eu. Donec tempus id augue imperdiet iaculis. Etiam iaculis enim sit amet tellus convallis, id mollis neque porttitor. Donec vel euismod neque, et pretium massa. Mauris ornare enim vitae quam aliquam, ut tristique orci convallis.
 
-Proin porttitor feugiat orci vitae condimentum. Duis in dui aliquet, faucibus odio et, egestas nulla. Proin non tristique quam, eu pulvinar ante. Nunc id lorem interdum, mattis arcu sed, dignissim ex. Nullam fringilla rutrum mi, sit amet tincidunt neque lacinia sit amet. Nullam felis ante, faucibus commodo malesuada ac, lacinia ut erat. Mauris purus dui, eleifend quis lacus non, pulvinar mollis felis. Nam elit nisi, facilisis vel nisl sit amet, aliquet viverra est. In sodales tristique sapien vitae condimentum. Mauris condimentum sapien sit amet lacus consequat dictum. Aliquam vestibulum ut augue eget laoreet. Sed sed massa justo.
+```plantuml
+Älöc -> Bob: Authentication Request
+Bob --> Älöc: Authentication Response
+
+Älöc -> Bob: Another authentication Request
+Älöc <-- Bob: another authentication Response
+```
+
+Proin porttitor [feugiat orci vitae](#whatever) condimentum. Duis in dui aliquet, faucibus odio et, egestas nulla. Proin non tristique quam, eu pulvinar ante. Nunc id lorem interdum, mattis arcu sed, dignissim ex. Nullam fringilla rutrum mi, sit amet tincidunt neque lacinia sit amet. Nullam felis ante, faucibus commodo malesuada ac, lacinia ut erat. Mauris purus dui, eleifend quis lacus non, pulvinar mollis felis. Nam elit nisi, facilisis vel nisl sit amet, aliquet viverra est. In sodales tristique sapien vitae condimentum. Mauris condimentum sapien sit amet lacus consequat dictum. Aliquam vestibulum ut augue eget laoreet. Sed sed massa justo.
+
+```{.graphviz #whatever1 caption="this is graph using neato engine" width=100%}
+graph G {
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	layout=neato
+	run -- intr;
+	intr -- runbl;
+	runbl -- run;
+	run -- kernel;
+	kernel -- zombie;
+	kernel -- sleep;
+	kernel -- runmem;
+	sleep -- swap;
+	swap -- runswap;
+	runswap -- new;
+	runswap -- runmem;
+	new -- runmem;
+	sleep -- runmem;
+}
+```
+
+Suspendisse aliquet nisi lacinia fermentum pretium. Donec et condimentum ipsum, quis gravida ligula. Aliquam placerat massa eu ipsum viverra tincidunt. Maecenas pretium mauris quis tempor euismod. Maecenas imperdiet lorem sit amet varius consectetur. Nullam bibendum diam nec placerat sodales. Aenean molestie facilisis pharetra.
+
+```{.graphviz #whatever2 caption="this is graph using dot engine" width=100% layout="dot" directed=True}
+digraph finite_state_machine {
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	rankdir=LR;
+	node [shape = doublecircle]; 0 3 4 8;
+	node [shape = circle];
+	0 -> 2 [label = "SS(B)"];
+	0 -> 1 [label = "SS(S)"];
+	1 -> 3 [label = "S($end)"];
+	2 -> 6 [label = "SS(b)"];
+	2 -> 5 [label = "SS(a)"];
+	2 -> 4 [label = "S(A)"];
+	5 -> 7 [label = "S(b)"];
+	5 -> 5 [label = "S(a)"];
+	6 -> 6 [label = "S(b)"];
+	6 -> 5 [label = "S(a)"];
+	7 -> 8 [label = "S(b)"];
+	7 -> 5 [label = "S(a)"];
+	8 -> 6 [label = "S(b)"];
+	8 -> 5 [label = "S(a)"];
+}
+```
 
 ##  Sed sagittis tortor
 Sed rhoncus odio vitae velit sagittis, at consectetur felis venenatis. Proin feugiat eros at ultrices pellentesque. Quisque at diam ultricies, consequat ante non, auctor sapien. Nunc vel pulvinar risus. Aenean rutrum massa lacus, vel suscipit dui porta in. Etiam commodo, nunc a consequat finibus, arcu erat fringilla est, id sodales magna dui sit amet ligula. Aenean ligula nisl, lacinia sed quam vitae, vulputate eleifend nulla. Cras pellentesque nibh sit amet nulla luctus, vitae posuere velit lobortis. Integer id efficitur sapien. Vestibulum ac fringilla risus.

@@ -46,3 +46,8 @@ csl: ../csl/ieee.csl
 doi: 10.xxxxxx/draft
 cc-license: "CC BY 4.0"
 cc-license-url: "https://creativecommons.org/licenses/by/4.0/"
+header-includes:
+  - \usepackage{algorithm2e}
+
+panflute-filters: [graphvizv1]
+panflute-path: ../data/filters
