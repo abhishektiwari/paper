@@ -112,7 +112,7 @@ digraph finite_state_machine {
 ```
 
 ##  Sed sagittis tortor
-Sed rhoncus odio [see below] vitae velit sagittis, at consectetur felis venenatis. Proin feugiat eros at ultrices pellentesque. Quisque at diam ultricies, consequat ante non, auctor sapien. Nunc vel pulvinar risus. Aenean rutrum massa lacus, vel suscipit dui porta in. Etiam commodo, nunc a consequat finibus, arcu erat fringilla est, id sodales magna dui sit amet ligula. Aenean ligula nisl, lacinia sed quam vitae, vulputate eleifend nulla. Cras pellentesque nibh sit amet nulla luctus, vitae posuere velit lobortis. Integer id efficitur sapien. Vestibulum ac fringilla risus.
+Sed rhoncus odio (see below) vitae velit sagittis, at consectetur felis venenatis. Proin feugiat eros at ultrices pellentesque. Quisque at diam ultricies, consequat ante non, auctor sapien. Nunc vel pulvinar risus. Aenean rutrum massa lacus, vel suscipit dui porta in. Etiam commodo, nunc a consequat finibus, arcu erat fringilla est, id sodales magna dui sit amet ligula. Aenean ligula nisl, lacinia sed quam vitae, vulputate eleifend nulla. Cras pellentesque nibh sit amet nulla luctus, vitae posuere velit lobortis. Integer id efficitur sapien. Vestibulum ac fringilla risus.
 
 
 \usetikzlibrary{automata, positioning, arrows, calc}
