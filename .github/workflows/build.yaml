@@ -51,7 +51,7 @@ jobs:
 
       - name: Install pygraphviz if paper file(s) change
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        run: curl -sLO https://debian.shatel.ir/ubuntu/pool/universe/p/python-pygraphviz/python3-pygraphviz_1.5-4build1_amd64.deb && sudo dpkg -i python3-pygraphviz_1.5-4build1_amd64.deb
+        run: pip install pygraphviz
       
       - name: Install texlive if paper file(s) change
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
