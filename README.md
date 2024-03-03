@@ -33,7 +33,7 @@ brew install pandoc texlive graphviz
 
 Install only required `texlive` packages,
 ```
-sudo tlmgr install beamerarticle pgfpages amsmath amssymb setspace inputenc mathspec unicode-math lmodern xeCJK upquote parskip fancyvrb xcolor hang flushmargin bottom multiple adjustbox graphicx listings etoolbox fvextra multirow longtable booktabs array caption headsepline footsepline titling footnotebackref sourcesanspro mdframed csquotes pagecolor afterpage tikz hyperref bookmark biblatex selnolig natbib babel calc subcaption soul luacolor svg float ccicons datetime2 algorithm2e ifoddpage relsize
+sudo tlmgr install beamerarticle pgfpages amsmath amssymb setspace inputenc mathspec unicode-math lmodern xeCJK upquote parskip fancyvrb xcolor hang flushmargin bottom multiple adjustbox graphicx listings etoolbox fvextra multirow longtable booktabs array caption headsepline footsepline titling footnotebackref sourcesanspro mdframed csquotes pagecolor afterpage tikz hyperref bookmark biblatex selnolig natbib babel calc subcaption soul luacolor svg float ccicons datetime2 algorithm2e ifoddpage relsize neuralnetwork pgf
 ```
 
 Alternatively, install `texlive-full`,
@@ -42,8 +42,7 @@ Alternatively, install `texlive-full`,
 brew install pandoc texlive-full
 ```
 
-
-Install Python packages using `pip`
+Install Python packages using `pip` to run `panflute` filters.
 
 ```
 pip install panflute graphviz

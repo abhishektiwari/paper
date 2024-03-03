@@ -60,7 +60,7 @@ Bob --> Älöc: Authentication Response
 Älöc <-- Bob: another authentication Response
 ```
 
-Proin porttitor [feugiat orci vitae](#whatever) condimentum. Duis in dui aliquet, faucibus odio et, egestas nulla. Proin non tristique quam, eu pulvinar ante. Nunc id lorem interdum, mattis arcu sed, dignissim ex. Nullam fringilla rutrum mi, sit amet tincidunt neque lacinia sit amet. Nullam felis ante, faucibus commodo malesuada ac, lacinia ut erat. Mauris purus dui, eleifend quis lacus non, pulvinar mollis felis. Nam elit nisi, facilisis vel nisl sit amet, aliquet viverra est. In sodales tristique sapien vitae condimentum. Mauris condimentum sapien sit amet lacus consequat dictum. Aliquam vestibulum ut augue eget laoreet. Sed sed massa justo.
+Proin porttitor [feugiat orci vitae](#whatever1) condimentum. Duis in dui aliquet, faucibus odio et, egestas nulla. Proin non tristique quam, eu pulvinar ante. Nunc id lorem interdum, mattis arcu sed, dignissim ex. Nullam fringilla rutrum mi, sit amet tincidunt neque lacinia sit amet. Nullam felis ante, faucibus commodo malesuada ac, lacinia ut erat. Mauris purus dui, eleifend quis lacus non, pulvinar mollis felis. Nam elit nisi, facilisis vel nisl sit amet, aliquet viverra est. In sodales tristique sapien [vitae condimentum](#whatever2). Mauris condimentum sapien sit amet lacus consequat dictum. Aliquam vestibulum ut augue eget laoreet. Sed sed massa justo.
 
 ```{.graphviz #whatever1 caption="this is graph using neato engine" width=100%}
 graph G {
@@ -113,6 +113,48 @@ digraph finite_state_machine {
 
 ##  Sed sagittis tortor
 Sed rhoncus odio vitae velit sagittis, at consectetur felis venenatis. Proin feugiat eros at ultrices pellentesque. Quisque at diam ultricies, consequat ante non, auctor sapien. Nunc vel pulvinar risus. Aenean rutrum massa lacus, vel suscipit dui porta in. Etiam commodo, nunc a consequat finibus, arcu erat fringilla est, id sodales magna dui sit amet ligula. Aenean ligula nisl, lacinia sed quam vitae, vulputate eleifend nulla. Cras pellentesque nibh sit amet nulla luctus, vitae posuere velit lobortis. Integer id efficitur sapien. Vestibulum ac fringilla risus.
+
+
+\usetikzlibrary{automata, positioning, arrows, calc}
+\tikzset{
+	->,  % makes the edges directed
+	>=stealth, % makes the arrow heads bold
+	shorten >=2pt, shorten <=2pt, % shorten the arrow
+	node distance=3cm, % specifies the minimum distance between two nodes. Change if n
+	every state/.style={draw=blue!55,very thick,fill=blue!20}, % sets the properties for each ’state’ n
+	initial text=$ $, % sets the text that appears on the start arrow
+ }
+\begin{figure}
+\centering
+\begin{tikzpicture}
+		\node[state with output, initial] (s0) {$S_0$ \nodepart{lower} $0$};
+		\node[state with output, right of=s0] (s1) {$S_1$ \nodepart{lower} $0$};
+		\node[state with output, right of=s1] (s2) {$S_2$ \nodepart{lower} $0$};
+		\node[state with output, right of=s2] (s3) {$S_3$ \nodepart{lower} $0$};
+		\node[state with output, right of=s3] (s4) {$S_4$ \nodepart{lower} $0$};
+		\node[state with output, accepting, right of=s4] (s5) {$S_5$ \nodepart{lower} $1$};
+		
+		\draw (s0) edge[loop above] node{$0$} (s0)
+			  (s0) edge[bend left] node[above]{$1$} (s1)
+			  %
+			  (s1) edge[bend left] node[above]{$0$} (s2)
+			  (s1) edge[bend left] node[above]{$1$} (s0)
+			  %
+			  (s2) edge[bend left] node[above]{$0$} (s3)
+			  (s2) edge[bend left=40] node[above]{$1$} (s0)
+			  %
+			  (s3) edge[bend left=50] node[above]{$0$} (s0)
+			  (s3) edge[bend left] node[above]{$1$} (s4)
+			  %
+			  (s4) edge[bend left] node[above]{$0$} (s5)
+			  (s4) edge[bend left=60] node[above]{$1$} (s0)
+			  %
+			  (s5) edge[bend right=40] node[above]{$1$} (s1)
+			  (s5) edge[bend left=70] node[above]{$0$} (s0)
+		;
+\end{tikzpicture}
+\caption{Moore Finite State Machine}
+\end{figure}
 
 Sed a congue eros. Morbi pulvinar commodo lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent vulputate pulvinar sollicitudin. Praesent ac vestibulum nisl. Praesent ac felis augue. Aliquam quis enim condimentum, sodales diam eu, fringilla felis. Phasellus vestibulum odio mauris, at tempus ante mollis quis.
 
