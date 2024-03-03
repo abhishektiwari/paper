@@ -47,7 +47,7 @@ jobs:
 
       - name: Install pandoc filter dependencies if paper file(s) change
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        run: sudo apt-get graphviz build-essential pip -y && pip install panflute graphviz pygraphviz
+        run: sudo apt-get install graphviz build-essential pip -y && pip install panflute graphviz pygraphviz
 
       - name: Install texlive if paper file(s) change
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
