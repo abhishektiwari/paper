@@ -26,10 +26,6 @@ def graphviz(elem, doc):
         except KeyError:
             caption = 'Add the caption'
         try:
-            width = elem.attributes['width']
-        except KeyError:
-            width = '100%'
-        try:
             layout = elem.attributes['layout']
         except KeyError:
             layout = 'neato'
@@ -57,7 +53,7 @@ def graphviz(elem, doc):
             sys.stderr.write('Created image ' + src + '\n')
         image=Image(alt, url=src, title='')
         caption = Caption(Plain(Str(caption)))
-        return Figure(Plain(image), caption=caption, identifier=identifier, attributes={'width': width})
+        return Figure(Plain(image), caption=caption, identifier=identifier)
 def main(doc=None):
     return toJSONFilter(graphviz, doc=doc)
 

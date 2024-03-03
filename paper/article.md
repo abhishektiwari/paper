@@ -62,7 +62,7 @@ Bob --> Älöc: Authentication Response
 
 Proin porttitor [feugiat orci vitae](#whatever1) condimentum. Duis in dui aliquet, faucibus odio et, egestas nulla. Proin non tristique quam, eu pulvinar ante. Nunc id lorem interdum, mattis arcu sed, dignissim ex. Nullam fringilla rutrum mi, sit amet tincidunt neque lacinia sit amet. Nullam felis ante, faucibus commodo malesuada ac, lacinia ut erat. Mauris purus dui, eleifend quis lacus non, pulvinar mollis felis. Nam elit nisi, facilisis vel nisl sit amet, aliquet viverra est. In sodales tristique sapien [vitae condimentum](#whatever2). Mauris condimentum sapien sit amet lacus consequat dictum. Aliquam vestibulum ut augue eget laoreet. Sed sed massa justo.
 
-```{.graphviz #whatever1 caption="this is graph using neato engine" width=100%}
+```{.graphviz #whatever1 caption="this is graph using neato engine"}
 graph G {
 	fontname="Helvetica,Arial,sans-serif"
 	node [fontname="Helvetica,Arial,sans-serif"]
@@ -86,7 +86,7 @@ graph G {
 
 Suspendisse aliquet nisi lacinia fermentum pretium. Donec et condimentum ipsum, quis gravida ligula. Aliquam placerat massa eu ipsum viverra tincidunt. Maecenas pretium mauris quis tempor euismod. Maecenas imperdiet lorem sit amet varius consectetur. Nullam bibendum diam nec placerat sodales. Aenean molestie facilisis pharetra.
 
-```{.graphviz #whatever2 caption="this is graph using dot engine" width=100% layout="dot" directed=True}
+```{.graphviz #whatever2 caption="this is graph using dot engine" layout="dot" directed=True}
 digraph finite_state_machine {
 	fontname="Helvetica,Arial,sans-serif"
 	node [fontname="Helvetica,Arial,sans-serif"]
