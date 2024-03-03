@@ -45,10 +45,14 @@ jobs:
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
         run: sudo apt-get update && curl -sLO https://github.com/jgm/pandoc/releases/download/3.1.12.1/pandoc-3.1.12.1-1-amd64.deb && sudo dpkg -i pandoc-3.1.12.1-1-amd64.deb && pandoc -v
 
-      - name: Install pandoc filter dependencies if paper file(s) change
+      - name: Install graphviz and panflute if paper file(s) change
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        run: sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config build-essential pip python-pygraphviz -y && pip install panflute graphviz
+        run: sudo apt-get install graphviz libgraphviz-dev -y && pip install panflute graphviz
 
+      - name: Install pygraphviz if paper file(s) change
+        if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
+        run: curl -sLO https://debian.shatel.ir/ubuntu/pool/universe/p/python-pygraphviz/python3-pygraphviz_1.7-4_amd64.deb && sudo dpkg -i python3-pygraphviz_1.7-4_amd64.deb
+      
       - name: Install texlive if paper file(s) change
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
         run: sudo apt-get install texlive-full -y
