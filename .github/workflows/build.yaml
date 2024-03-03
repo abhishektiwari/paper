@@ -51,7 +51,7 @@ jobs:
 
       - name: Install pygraphviz if paper file(s) change
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
-        run: pip install pygraphviz
+        run: pip install pygraphviz && pip list
       
       - name: Install texlive if paper file(s) change
         if: steps.changed-files-yaml.outputs.paper_any_changed == 'true'
